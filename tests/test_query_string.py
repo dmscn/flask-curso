@@ -8,7 +8,7 @@ def resp(client):
         'name': 'Leo',
         'surname': 'Damasceno'
     }
-    return client.get(url_for('name_surname'), query_string=query)
+    return client.get(url_for('names.name_surname'), query_string=query)
 
 
 def test_status_code(resp):
@@ -16,4 +16,4 @@ def test_status_code(resp):
 
 
 def test_msg(resp):
-    assert 'Leo Damasceno' in resp.get_data(as_text=True)
+    assert 'Hello Leo Damasceno' in resp.get_data(as_text=True)
