@@ -13,3 +13,7 @@ def resp(client):
 
 def test_status_code(resp):
     assert resp.status_code == 200
+
+
+def test_msg(resp):
+    assert 'Leo Damasceno' in resp.get_data(as_text=True)
